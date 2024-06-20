@@ -1,0 +1,113 @@
+/* Default styles for all screen sizes */
+.Content-home {
+    height: 200px;
+    margin-left: 25px;
+    word-spacing: 2%;
+    font-size: x-large;
+    font-weight: 300;
+    line-height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .home-li {
+    margin-left: 50px;
+    list-style-type: circle;
+    word-spacing: 5%;
+    font-size: bolder;
+  }
+  
+  .home-ul {
+    background-color: #FFDEB4;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  
+  .home-img {
+    margin-top: 5px;
+    height: 225px;
+    width: 225px;
+    float: left;
+  }
+  
+  .credits {
+    position:sticky;
+    bottom:0;
+    background-color: #111;
+    margin-top: 25%;
+    max-height: 120px;
+  }
+  
+  .credit-p {
+    display: inline;
+    width: fit-content;
+    font-size: 20px;
+    height: fit-content;
+    color: #FFDEB4;
+    padding-top: 20%;
+  }
+  
+  .credit-p1 {
+    display: inline;
+    background-color: #FFDEB4;
+    color: #111;
+    margin-left: 1%;
+    width: max-content;
+    height: fit-content;
+    border-radius: 60px;
+  }
+  
+  /* Media query for screens with a maximum width of 768px (e.g., smartphones) */
+  @media screen and (max-width: 768px) {
+    .Content-home {
+      height: auto;
+      margin-left: 10px;
+      font-size: large;
+      line-height: 30px;
+    }
+    .home-li {
+      margin-left: 30px;
+      font-size: normal;
+    }
+    .home-ul {
+      margin-left: 10px;
+    }
+    .home-img {
+      width: 100%;
+      height: auto;
+      float: none;
+      margin-bottom: 10px;
+    }
+    .credits {
+      margin-top: 10%;
+    }
+    .credit-p {
+      font-size: 16px;
+      padding-top: 10%;
+    }
+    .credit-p1 {
+      font-size: 18px;
+      margin-left: 5px;
+    }
+  }
+  
+  /* Media query for screens with a minimum width of 769px and a maximum width of 1024px (e.g., tablets) */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Add your responsive styles here */
+    /* Adjust margins and paddings for better readability */
+    .credits {
+      margin-top: 15%; /* Increase margin-top to create more space */
+      padding: 10px; /* Add padding to create space between elements */
+    }
+    .credit-p {
+      padding-top: 15%; /* Increase padding for better spacing */
+    }
+    .credit-p1 {
+      margin-left: 10px; /* Increase the margin to separate elements */
+    }
+  }
+  
+  /* Media query for screens with a minimum width of 1025px (e.g., desktops) */
+  @media screen and (min-width: 1025px) {
+    /* Add your responsive styles here for all the elements */
+  }
+  

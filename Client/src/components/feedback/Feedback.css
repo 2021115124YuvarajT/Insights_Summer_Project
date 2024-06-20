@@ -1,0 +1,78 @@
+/* Feedback.css */
+
+.form-form{
+  margin-left:500px;
+}
+.form-top {
+  max-width: 600px;
+  margin: 30px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.form-top h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-top form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-top label {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.form-top input[type='email'],
+.form-top textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-top textarea {
+  resize: vertical;
+}
+
+.form-top button[type='submit'] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.form-top button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+.return-button {
+  display: block;
+  width: 200px;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  margin: 20px auto;
+}
+
+.return-button:hover {
+  background-color: #0056b3;
+  
+}

@@ -1,0 +1,53 @@
+/* Dev_Team.css */
+
+.team-container {
+    font-size: x-large;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .team-title {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .team-description {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .team-member-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .team-member-list li {
+    margin-bottom: 8px;
+    color: #666;
+  }
+  
+  .team-member-list li::before {
+    content: "•";
+    color: #666;
+    margin-right: 8px;
+    background-color:white;
+  }
+  
+  .guide-info {
+    text-align: center;
+    color: #150101;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .top-cover{
+    background-color: white;
+  }
