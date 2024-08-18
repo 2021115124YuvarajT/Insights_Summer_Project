@@ -12,7 +12,7 @@ const navigate = useNavigate();
   async function submit(e){
     e.preventDefault();
     try{
-        await axios.post("http://localhost:8000/feedback",{
+        await axios.post("http://localhost:8000/api/feedback",{
             email,message
         })
         .then(res=>{

@@ -17,7 +17,7 @@ export const Signup = () => {
     e.preventDefault();
     try {
       await axios
-        .post('http://localhost:8000/signup', {
+        .post('http://localhost:8000/auth/signup', {
           email,
           password,
           name,

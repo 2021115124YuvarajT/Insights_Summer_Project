@@ -23,7 +23,7 @@ const Discussion = () => {
     }
 
     try {
-      await axios.post('http://localhost:8000/discussion', { email, doubts })
+      await axios.post('http://localhost:8000/api/discussion', { email, doubts })
         .then(res => {
           if (res.data === 'done') {
             setSuccessMessage('Doubts submitted successfully!');

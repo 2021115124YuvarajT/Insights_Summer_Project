@@ -39,11 +39,11 @@ export const Login = () => {
   async function submit(e) {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/', {
+      const response = await axios.post('http://localhost:8000/auth/login', {
         email,
         password,
-      });
-
+      },{ withCredentials: true });
+       console.log(response.data);
       if (response.data.success) {
         setCookie("user_email", email, 1);
         setCookie("user_name",response.data.name,1);

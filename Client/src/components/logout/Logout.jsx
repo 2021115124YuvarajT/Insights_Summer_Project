@@ -9,7 +9,7 @@ const Logout = () => {
   useEffect(() => {
     async function logoutUser() {
       try {
-        const response = await axios.post('http://localhost:8000/logout');
+        const response = await axios.post('http://localhost:8000/auth/logout');
 
         if (response.data.success) {
           // Redirect to the login page after successful logout
