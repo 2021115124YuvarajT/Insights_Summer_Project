@@ -6,16 +6,20 @@ const Discussion_table = () => {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [filteredDiscussions, setFilteredDiscussions] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
+  const [refresh, setRefresh] = useState(false); // State to trigger refresh
 
   useEffect(() => {
     fetchDiscussions();
-  }, []); // Initial fetch
+  }, [refresh]); // Fetch discussions when `refresh` changes
 
   const fetchDiscussions = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/discussion');
-      setDiscussions(response.data.discussions);
-      setFilteredDiscussions(response.data.discussions); // Display all discussions initially
+      const response = await axios.get('http://localhost:8000/api/discussion');
+      const sortedDiscussions = response.data.discussions.sort((a, b) => {
+        return a.email.localeCompare(b.email); // Sort by email ID
+      });
+      setDiscussions(sortedDiscussions);
+      setFilteredDiscussions(sortedDiscussions); // Display all discussions initially
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +41,12 @@ const Discussion_table = () => {
       ? discussions.filter((discussion) => discussion.email === enteredEmail)
       : discussions;
 
-    setFilteredDiscussions(filteredData);
+    // Sort filtered data
+    const sortedFilteredData = filteredData.sort((a, b) => {
+      return a.email.localeCompare(b.email); // Sort by email ID
+    });
+
+    setFilteredDiscussions(sortedFilteredData);
 
     // Display error message if no discussions match the entered email
     if (filteredData.length === 0) {

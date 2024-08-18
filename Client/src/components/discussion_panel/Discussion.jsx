@@ -1,8 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./discussion.css"
 import Discussion_table from './Discussion_table';
+
+// Function to get the value of a specific cookie
+const getCookie = (cname) => {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+};
 
 const Discussion = () => {
   const navigate = useNavigate();
@@ -11,6 +28,16 @@ const Discussion = () => {
   const [successMessage, setSuccessMessage] = useState('Send your doubts here');
   const [errorMessage, setErrorMessage] = useState('');
   const [discussions, setDiscussions] = useState([]); 
+
+  useEffect(() => {
+    // Set the email from the cookie when the component mounts
+    const userEmail = getCookie('user_email');
+    if (userEmail) {
+      setEmail(userEmail);
+    }
+    // Fetch discussions on mount
+    fetchDiscussions();
+  }, []);
 
   async function submit(e) {
     e.preventDefault();
@@ -27,7 +54,6 @@ const Discussion = () => {
         .then(res => {
           if (res.data === 'done') {
             setSuccessMessage('Doubts submitted successfully!');
-            setEmail('');
             setDoubts('');
             setErrorMessage('');
           }
@@ -58,6 +84,8 @@ const Discussion = () => {
             type="text"
             id="email"
             name="email"
+            value={email} 
+            readOnly// Set the email from cookie
             onChange={(e) => setEmail(e.target.value)}
             required
           />
